@@ -33,7 +33,7 @@ android {
 
 project.ext {
     supportLibraryVersion = "27.0.2"
-    daggerVersion = "2.11"
+    daggerVersion = "2.14.1"
     constraintLayout = "1.0.2"
     iosLikeButtons = "1.4.6"
     rxJava = "2.0.1"
@@ -48,7 +48,6 @@ project.ext {
     mockitoKotlin = "1.5.0"
     hamcrestMatchers = "2.0.0.0"
     restMock = "0.2.2"
-    kotlinTestSupport = "1.1.51"
 }
 
 dependencies {
@@ -125,6 +124,6 @@ dependencies {
     // RESTMock: Mock the server calls easy
     androidTestImplementation "com.github.andrzejchm.RESTMock:android:$project.restMock"
     // Kotlin Test Support
-    testImplementation "org.jetbrains.kotlin:kotlin-test:$project.kotlinTestSupport"
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$project.kotlinTestSupport"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$project.kotlin_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$project.kotlin_version"
 }
