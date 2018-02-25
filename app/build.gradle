@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.2'
+    buildToolsVersion '27.0.3'
     defaultConfig {
 
         print(app_version_name)
@@ -53,7 +53,6 @@ project.ext {
 
 dependencies {
 //    Tech Enablement
-    implementation project(':kandroidbase')
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation "com.android.support:appcompat-v7:$project.supportLibraryVersion"
     // Reactive Java: Because android is basically a reactive platform. Migrate reactive behaviour to it's use is the goal
