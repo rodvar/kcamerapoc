@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.Window
 import android.widget.Toast
 import com.rodvar.kotlinbase.R
 import com.rodvar.kotlinbase.base.presentation.AppView.Companion.NO_VIEW
@@ -18,7 +19,7 @@ import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_bottomnavigation_main.*
 import javax.inject.Inject
 
 
@@ -105,7 +106,7 @@ abstract class BaseActivity : AppCompatActivity(), HasSupportFragmentInjector, A
      */
     fun lockRotation(lock: Boolean) {
         if (lock) {
-            if (resources.configuration.orientation === Configuration.ORIENTATION_PORTRAIT)
+            if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT)
                 this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
             else
                 this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
@@ -125,6 +126,14 @@ abstract class BaseActivity : AppCompatActivity(), HasSupportFragmentInjector, A
         startActivity(homeIntent)
     }
 
+    fun showActionBar(show: Boolean) {
+        if (show)
+            supportActionBar?.show()
+        else {
+            window.requestFeature(Window.FEATURE_ACTION_BAR)
+            supportActionBar?.hide()
+        }
+    }
 
     /**
      * Show app's defaul spinner

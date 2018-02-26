@@ -1,8 +1,8 @@
-package com.rodvar.kotlinbase.feature.accounts
+package com.rodvar.kotlinbase.feature.bottomnavigation.accounts
 
 import com.rodvar.kotlinbase.R
 import com.rodvar.kotlinbase.base.presentation.BasePresenter
-import com.rodvar.kotlinbase.feature.more.MoreOptionsMenuFragment
+import com.rodvar.kotlinbase.feature.bottomnavigation.more.MoreOptionsMenuFragment
 
 /**
  * Created by rodvar on 5/9/17.

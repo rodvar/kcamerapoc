@@ -1,4 +1,4 @@
-package com.rodvar.kotlinbase.feature;
+package com.rodvar.kotlinbase.feature.bottomnavigation;
 
 
 import android.support.test.espresso.ViewInteraction;
@@ -8,14 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import com.rodvar.kotlinbase.BaseInstrumentedTest;
+import com.rodvar.kotlinbase.R;
+import com.rodvar.kotlinbase.feature.SplashActivity;
+
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
-
-import com.rodvar.kotlinbase.BaseInstrumentedTest;
-import com.rodvar.kotlinbase.R;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -28,6 +30,7 @@ import static org.hamcrest.Matchers.allOf;
 /**
  * Created by rodvar on 24/11/17.
  */
+@Ignore("Until there is a clear defintion of the UI navigation and this is to be either used or disposed")
 @LargeTest
 public class MainMenuUITest extends BaseInstrumentedTest {
 

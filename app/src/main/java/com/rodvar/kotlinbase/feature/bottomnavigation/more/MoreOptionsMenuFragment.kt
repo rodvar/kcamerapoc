@@ -1,4 +1,4 @@
-package com.rodvar.kotlinbase.feature.more
+package com.rodvar.kotlinbase.feature.bottomnavigation.more
 
 import com.rodvar.kotlinbase.R
 import com.rodvar.kotlinbase.base.presentation.BaseFragment

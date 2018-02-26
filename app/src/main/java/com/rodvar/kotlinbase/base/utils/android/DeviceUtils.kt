@@ -9,7 +9,6 @@ import android.content.res.Configuration
 import android.graphics.Point
 import android.os.Build
 import android.os.IBinder
-import android.os.PowerManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.FragmentActivity
 import android.support.v4.content.ContextCompat
@@ -85,27 +84,6 @@ class DeviceUtils {
 
         private fun isReady(activity: Activity?): Boolean {
             return activity != null && !activity.isFinishing
-        }
-
-        fun isScreenOn(context: Context): Boolean {
-            val pm = context.getSystemService(Context.POWER_SERVICE) as PowerManager
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-                return pm.isInteractive
-            else
-                return pm.isScreenOn
-        }
-
-        fun isNfcAvailable(context: Context): Boolean {
-            val pm = context.packageManager
-            return pm.hasSystemFeature(PackageManager.FEATURE_NFC)
-        }
-
-        fun getKeyguardManager(context: Context): KeyguardManager? {
-            if (keyguardManager === NO_VALUE) {
-                keyguardManager = context.getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-            }
-
-            return keyguardManager
         }
 
         private fun checkRootMethod1(): Boolean {

@@ -18,12 +18,15 @@ interface AppPresenter {
     fun onViewCreated()
 
     /**
-     * on view resumed callback
+     * on view resumed/paused callback
      */
     fun onResume()
+
+    fun onPause()
 
     /**
      * @return true if handled, false otherwise
      */
     fun onBackPressed(): Boolean = false
+
 }

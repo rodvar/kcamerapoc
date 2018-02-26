@@ -21,6 +21,9 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        this.showActionBar(false)
+
         setContentView(R.layout.activity_main)
         loadFragment(R.id.main_container, mainFragment, true, animate = true)
     }

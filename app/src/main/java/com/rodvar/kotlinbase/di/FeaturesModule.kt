@@ -2,14 +2,15 @@ package com.rodvar.kotlinbase.di
 
 import com.rodvar.kotlinbase.di.scopes.PerFeature
 import com.rodvar.kotlinbase.feature.MainActivity
-import com.rodvar.kotlinbase.feature.accounts.AccountsMenuFragment
-import com.rodvar.kotlinbase.feature.accounts.AccountsModule
-import com.rodvar.kotlinbase.feature.accounts.MoreOptionsMenuModule
-import com.rodvar.kotlinbase.feature.accounts.TransferMoneyMenuModule
-import com.rodvar.kotlinbase.feature.main.MainFragment
-import com.rodvar.kotlinbase.feature.main.MainModule
-import com.rodvar.kotlinbase.feature.money.TransferMoneyMenuFragment
-import com.rodvar.kotlinbase.feature.more.MoreOptionsMenuFragment
+import com.rodvar.kotlinbase.feature.bottomnavigation.CameraViewFragment
+import com.rodvar.kotlinbase.feature.bottomnavigation.MainBottomNavigationModule
+import com.rodvar.kotlinbase.feature.bottomnavigation.accounts.AccountsMenuFragment
+import com.rodvar.kotlinbase.feature.bottomnavigation.accounts.AccountsModule
+import com.rodvar.kotlinbase.feature.bottomnavigation.accounts.MoreOptionsMenuModule
+import com.rodvar.kotlinbase.feature.bottomnavigation.accounts.TransferMoneyMenuModule
+import com.rodvar.kotlinbase.feature.bottomnavigation.money.TransferMoneyMenuFragment
+import com.rodvar.kotlinbase.feature.bottomnavigation.more.MoreOptionsMenuFragment
+import com.rodvar.kotlinbase.feature.camera.CameraViewModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -29,12 +30,12 @@ import dagger.android.ContributesAndroidInjector
 abstract class FeaturesModule {
 
     @PerFeature
-    @ContributesAndroidInjector(modules = arrayOf(MainModule::class))
+    @ContributesAndroidInjector(modules = arrayOf(CameraViewModule::class))
     abstract fun bindMainActivity(): MainActivity
 
     @PerFeature
-    @ContributesAndroidInjector(modules = arrayOf(MainModule::class))
-    abstract fun bindMainFragment(): MainFragment
+    @ContributesAndroidInjector(modules = arrayOf(MainBottomNavigationModule::class))
+    abstract fun bindMainFragment(): CameraViewFragment
 
     @PerFeature
     @ContributesAndroidInjector(modules = arrayOf(AccountsModule::class))

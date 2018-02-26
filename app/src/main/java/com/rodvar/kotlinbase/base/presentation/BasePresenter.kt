@@ -15,6 +15,10 @@ abstract class BasePresenter : AppPresenter {
         this.changeTitle()
     }
 
+    override fun onPause() {
+        // do nth
+    }
+
     private fun changeTitle() {
         try {
             if (view.title != NO_VIEW)

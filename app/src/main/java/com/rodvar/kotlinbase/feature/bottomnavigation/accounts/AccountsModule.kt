@@ -1,4 +1,4 @@
-package com.rodvar.kotlinbase.feature.accounts
+package com.rodvar.kotlinbase.feature.bottomnavigation.accounts
 
 import com.rodvar.kotlinbase.base.presentation.AppPresenter
 import com.rodvar.kotlinbase.base.presentation.BaseFragment

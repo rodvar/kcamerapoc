@@ -1,27 +1,27 @@
-package com.rodvar.kotlinbase.feature.main
+package com.rodvar.kotlinbase.feature.bottomnavigation
 
 import android.view.MenuItem
 import com.rodvar.kotlinbase.R
 import com.rodvar.kotlinbase.base.presentation.BaseFragment
 import com.rodvar.kotlinbase.base.presentation.BasePresenter
-import com.rodvar.kotlinbase.feature.accounts.AccountsMenuFragment
-import com.rodvar.kotlinbase.feature.money.TransferMoneyMenuFragment
-import com.rodvar.kotlinbase.feature.more.MoreOptionsMenuFragment
-import kotlinx.android.synthetic.main.fragment_main.*
+import com.rodvar.kotlinbase.feature.bottomnavigation.accounts.AccountsMenuFragment
+import com.rodvar.kotlinbase.feature.bottomnavigation.money.TransferMoneyMenuFragment
+import com.rodvar.kotlinbase.feature.bottomnavigation.more.MoreOptionsMenuFragment
+import kotlinx.android.synthetic.main.fragment_bottomnavigation_main.*
 
 /**
  * Created by rodvar on 5/9/17.
  */
-class MainPresenter : BasePresenter() {
+class MainBottomNavigationPresenter : BasePresenter() {
 
     override fun onViewCreated() {
         this.selectFirstMenuOption()
-        (view as MainFragment).bottom_navigation.setOnNavigationItemSelectedListener { item: MenuItem -> selectMenu(item) }
+        (view as MainBottomNavigationFragment).bottom_navigation.setOnNavigationItemSelectedListener { item: MenuItem -> selectMenu(item) }
     }
 
     private fun selectFirstMenuOption() {
         this.loadFragment(fragmentToLoad = AccountsMenuFragment.newInstance())
-        (view as MainFragment).defaultMenuOption()
+        (view as MainBottomNavigationFragment).defaultMenuOption()
     }
 
     private fun selectMenu(item: MenuItem): Boolean {

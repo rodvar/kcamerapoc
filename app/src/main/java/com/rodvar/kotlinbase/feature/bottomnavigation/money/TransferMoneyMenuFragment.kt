@@ -1,4 +1,4 @@
-package com.rodvar.kotlinbase.feature.money
+package com.rodvar.kotlinbase.feature.bottomnavigation.money
 
 import com.rodvar.kotlinbase.R
 import com.rodvar.kotlinbase.base.presentation.BaseFragment

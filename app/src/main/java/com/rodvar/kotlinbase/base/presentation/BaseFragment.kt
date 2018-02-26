@@ -34,7 +34,7 @@ abstract class BaseFragment : Fragment(), AppView {
      */
     final override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                            savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(getLayoutResId(), container, false)
+        return inflater.inflate(getLayoutResId(), container, false)
     }
 
     final override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,6 +54,11 @@ abstract class BaseFragment : Fragment(), AppView {
     override fun onResume() {
         super.onResume()
         presenter.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        presenter.onPause()
     }
 
     /**

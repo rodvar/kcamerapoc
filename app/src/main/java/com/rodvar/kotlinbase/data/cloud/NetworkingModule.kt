@@ -105,7 +105,7 @@ open class NetworkingModule {
             private fun isGenericResponseBody(rawJson: String): Boolean {
                 var isGeneric = false
                 try {
-                    val response = GsonObjectParser().get()?.fromJson(rawJson,
+                    val response = GsonObjectParser().get().fromJson(rawJson,
                             GenericResponse::class.java)
                     Logger.debug(javaClass.simpleName, "Recognized an error status response " +
                             "on an HTTP ERROR CODE response. " + "Changing error code to HTTP OK")
@@ -161,7 +161,7 @@ open class NetworkingModule {
 }
 
 class GsonObjectParser {
-    fun get(): Gson? {
+    fun get(): Gson {
         return Gson()
     }
 
