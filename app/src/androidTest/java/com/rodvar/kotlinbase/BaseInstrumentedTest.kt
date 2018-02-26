@@ -6,9 +6,14 @@ import android.support.test.InstrumentationRegistry.getInstrumentation
 import android.support.test.runner.AndroidJUnit4
 import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry
 import android.support.test.runner.lifecycle.Stage
+import android.view.View
+import android.view.ViewGroup
 import com.rodvar.kotlinbase.base.utils.android.Logger
 import com.rodvar.kotlinbase.di.AppTestComponent
 import io.appflate.restmock.RESTMockServer
+import org.hamcrest.Description
+import org.hamcrest.Matcher
+import org.hamcrest.TypeSafeMatcher
 import org.junit.Before
 import org.junit.runner.RunWith
 
@@ -64,6 +69,24 @@ abstract class BaseInstrumentedTest : SampleAppInstrumentedTest {
         })
 
         return currentActivity[0]
+    }
+
+
+    protected fun childAtPosition(
+            parentMatcher: Matcher<View>, position: Int): Matcher<View> {
+
+        return object : TypeSafeMatcher<View>() {
+            override fun describeTo(description: Description) {
+                description.appendText("Child at position $position in parent ")
+                parentMatcher.describeTo(description)
+            }
+
+            public override fun matchesSafely(view: View): Boolean {
+                val parent = view.parent
+                return (parent is ViewGroup && parentMatcher.matches(parent)
+                        && view == parent.getChildAt(position))
+            }
+        }
     }
 
 }

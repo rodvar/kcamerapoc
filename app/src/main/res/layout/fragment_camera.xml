@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.wonderkiln.camerakit.CameraView
         android:id="@+id/cameraView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:adjustViewBounds="true" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/invertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/front_camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<com.wonderkiln.app.CameraView-->
+    <!--android:id="@+id/cameraView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:ckFacing="front"-->
+    <!--app:ckFlash="off"-->
+    <!--app:ckFocus="continuous"-->
+    <!--app:ckMethod="standard"-->
+    <!--app:ckPermissions="strict"-->
+    <!--app:ckCropOutput="true"-->
+    <!--app:ckJpegQuality="100"-->
+    <!--app:ckVideoQuality="max480p"-->
+    <!--android:adjustViewBounds="true" />-->
 
 </android.support.constraint.ConstraintLayout>

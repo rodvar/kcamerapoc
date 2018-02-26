@@ -9,4 +9,6 @@
     <string name="more_options_menu_txt">More Options</string>
     <string name="more_options_menu_title">More Options Title</string>
     <string name="some_action_menu_title">Some Action Title</string>
+    <string name="front_camera">FRONT</string>
+    <string name="back_camera">BACK</string>
 </resources>
