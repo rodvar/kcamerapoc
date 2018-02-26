@@ -5,9 +5,6 @@ import android.view.LayoutInflater;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import com.kyleduo.switchbutton.SwitchButton;
 
 /**
  * Created by rodvar on 31/7/17.
@@ -37,10 +34,10 @@ public class SwitchButtonUtils {
         }
         toggleSetting.setTag(label);
 
-        ((TextView) toggleSetting.getChildAt(0)).setText(label);
-        SwitchButton switchToggle = (SwitchButton) toggleSetting.getChildAt(1);
-        switchToggle.setChecked(checked);
-        switchToggle.setTag(label);
-        switchToggle.setOnCheckedChangeListener(toggleChanged);
+//        ((TextView) toggleSetting.getChildAt(0)).setText(label);
+//        SwitchButton switchToggle = (SwitchButton) toggleSetting.getChildAt(1);
+//        switchToggle.setChecked(checked);
+//        switchToggle.setTag(label);
+//        switchToggle.setOnCheckedChangeListener(toggleChanged);
     }
 }

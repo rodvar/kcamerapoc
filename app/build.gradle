@@ -40,7 +40,6 @@ project.ext {
     rxRelay = "2.0.0"
     retrofit = "2.3.0"
     userAgentFactory = "0.0.1"
-    googleHttpClient = "1.19.0"
 
     junit = "4.12"
     testRunner = "1.0"
@@ -74,18 +73,6 @@ dependencies {
         exclude module: "retrofit"
         exclude module: "rxjava"
     }
-    // User Agent Factory
-    implementation "com.quasar.android:android-user-agent-factory:$project.userAgentFactory"
-
-    // The following 2 http client dependencies are included only to support a legacy code dependency
-    // which is not really doing networking, need to analyse removal
-    implementation("com.google.http-client:google-http-client:$project.googleHttpClient") {
-        exclude group: 'org.apache.httpcomponents'
-    }
-    implementation("com.google.http-client:google-http-client-gson:$project.googleHttpClient") {
-        exclude group: "com.google.code.gson", module: "gson"
-        exclude group: "com.google.http-client", module: "google-http-client"
-    }
 
 //    DI
     // Dagger Core
@@ -109,9 +96,9 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:$project.constraintLayout"
 
     // iOS like toggle buttons
-    implementation("com.kyleduo.switchbutton:library:$project.iosLikeButtons") {
-        exclude module: 'appcompat-v7'
-    }
+//    implementation("com.kyleduo.switchbutton:library:$project.iosLikeButtons") {
+//        exclude module: 'appcompat-v7'
+//    }
 
 //    Testing
     testImplementation "junit:junit:$project.junit"

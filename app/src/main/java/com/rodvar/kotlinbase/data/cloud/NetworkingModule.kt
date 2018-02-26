@@ -1,10 +1,10 @@
 package com.rodvar.kotlinbase.data.cloud
 
 import android.content.Context
+import com.google.gson.Gson
 import com.rodvar.kotlinbase.BuildConfig
 import com.rodvar.kotlinbase.base.data.GenericResponse
 import com.rodvar.kotlinbase.base.utils.android.Logger
-import com.rodvar.kotlinbase.data.json.GsonObjectParser
 import dagger.Module
 import dagger.Provides
 import okhttp3.*
@@ -105,7 +105,7 @@ open class NetworkingModule {
             private fun isGenericResponseBody(rawJson: String): Boolean {
                 var isGeneric = false
                 try {
-                    val response = GsonObjectParser().get().fromJson(rawJson,
+                    val response = GsonObjectParser().get()?.fromJson(rawJson,
                             GenericResponse::class.java)
                     Logger.debug(javaClass.simpleName, "Recognized an error status response " +
                             "on an HTTP ERROR CODE response. " + "Changing error code to HTTP OK")
@@ -157,5 +157,12 @@ open class NetworkingModule {
         return httpClientBuilder.build()
     }
 
+
+}
+
+class GsonObjectParser {
+    fun get(): Gson? {
+        return Gson()
+    }
 
 }
